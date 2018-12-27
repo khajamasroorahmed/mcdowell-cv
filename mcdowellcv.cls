@@ -42,6 +42,28 @@
 \setmainfont[SmallCapsFeatures={Renderer=Basic},
 Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 
+% Include hyperlink library
+\usepackage{hyperref}
+
+% Reset hyperlink settings
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    urlcolor=blue,          % color of external links
+}
+
 % Remove paragraph indentation
 \usepackage[parfill]{parskip} 
 
@@ -155,12 +177,54 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 
 \makeatother
 
+% Email
+\makeatletter
+
+\newcommand\email[1]{\def\@email{#1}}
+\email{}
+
+\newcommand\printemail{
+	\small{\@email}
+}
+
+\makeatother
+
+% Github
+\makeatletter
+
+\newcommand\github[1]{\def\@github{#1}}
+\github{}
+
+\newcommand\printgithub{
+	\small{\href{\@github}{Github}}
+}
+
+\makeatother
+
+% LinkedIn
+\makeatletter
+
+\newcommand\linkedin[1]{\def\@linkedin{#1}}
+\linkedin{}
+
+\newcommand\printlinkedin{
+	\small{\href{\@linkedin}{LinkedIn}}
+}
+
+\makeatother
+
 \makeatletter
 \newcommand\makeheader{
 	\begin{center}
 		\begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
 			\printaddress & \printname & \printcontacts \\
-		\end{tabu}	
+		\end{tabu}
+		\begin{tabu} to 1\textwidth { X[c] }
+			\printemail \\
+		\end{tabu}
+		\begin{tabu} to 1\textwidth { X[c] }
+			\printgithub \( \cdot \) \printlinkedin \\
+		\end{tabu}
 	\end{center}
 	\vspace*{\afterheaderspace}
 }

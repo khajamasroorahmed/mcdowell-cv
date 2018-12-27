@@ -5,7 +5,7 @@ http://www.careercup.com/resume.
 The class is based on `article` class. The paper format is set to U.S. letterpaper by default. A template showing an example usage of the class is included.
 
 ## Screenshot
-<img src="https://github.com/dnl-blkv/mcdowell-cv/blob/master/McDowell_CV.png" width="240px"/>
+<img src="https://github.com/khajamasroorahmed/mcdowell-cv/blob/master/resume.png" width="240px"/>
 
 ## Use Cases
 - A great tool making it easy to build CVs: https://latexresu.me/.
@@ -18,6 +18,9 @@ The class features the following commands:
  - `\name{name}` - defines the applicant's name to be printed by `\printheader`.
  - `\address{address}` - defines the applicant's address to be printed by `\printheader`.
  - `\contacts{contacts}` - defines the applicant's contacts to be printed by `\printheader`.
+ - `\email{email}` - defines the applicant's email to be printed by `\printemail`.
+ - `\github{github}` - defines the applicant's github public url to be printed by `\printgithub`.
+ - `\linkedin{linkedin}` - defines the applicant's linkedin public url to be printed by `\printlinkedin`.
  - `\makecvheader` - prints the CV header consisting of the name (see the `\name` command), address (see the `\address` command) and contacts (see the `\contacts` command).
  
 ## Environments
@@ -26,4 +29,4 @@ The class features the following commands:
 
 ## Build Instructions
 - Make sure `lualatex` (see http://www.luatex.org/download.html) is installed on your machine and is available in the terminal or a command line client of your choice.
-- In the terminal or a command line client of your choice, go to the folder containing `McDowell_CV_Template.tex` and `mcdowellcv.cls`, and run the following command: `lualatex McDowell_CV_Template.tex`.
+- In the terminal or a command line client of your choice, go to the folder containing `resume.tex` and `mcdowellcv.cls`, and run the following command: `lualatex resume.tex`.
